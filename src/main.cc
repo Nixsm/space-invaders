@@ -1,16 +1,25 @@
 #include <iostream> 
 #include "point2D.hh"
-#include "sdl_window.hh"
-#include <memory>
+#include "sdl_context.hh"
 
 int main() {
 	std::cout << "Space Invaders" << std::endl;
-
-    auto p = Math::Point2D(10, 10);
-    std::cout << p << std::endl;
     
-    std::shared_ptr<Window> win = std::make_shared<SDLWindow>(Math::Point2D(400, 400), "Space Invaders");
-    while (true) {
+    std::shared_ptr<Context> context = std::make_shared<SDLContext>();
+
+    std::shared_ptr<Window> win = context->createWindow(Math::Point2D(400, 400), "Space Invaders");
+    std::shared_ptr<EventHandler> eh = context->createEventHandler();
+    
+    bool running = true;
+    while (running) {
+        if (eh->hasEvent()) {
+            auto event = eh->pollEvent();
+            
+            if (event.first == KS_QUIT) {
+                running = false;
+            }
+        }
+        
         continue;
     }
 
