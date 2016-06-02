@@ -26,3 +26,6 @@ target_link_libraries(spaceInvaders ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
 source_group("SDL Headers" ${CMAKE_CURRENT_SOURCE_DIR}/include/sdl)
 source_group("SDL Sources" ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl)
 
+source_group("Game Headers" ${CMAKE_CURRENT_SOURCE_DIR}/include/game)
+source_group("Game Sources" ${CMAKE_CURRENT_SOURCE_DIR}/src/game)
+
