@@ -6,7 +6,7 @@
 class SDLImageLoader: public ImageLoader {
 public:
     SDLImageLoader(std::shared_ptr<Window> window);
-    virtual Image loadImage(std::string path);
+    virtual std::shared_ptr<Image> loadImage(std::string path);
 };
 
 #endif //SDL_IMAGE_LOADER_HH

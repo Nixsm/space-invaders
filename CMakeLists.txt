@@ -13,8 +13,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -Wall -fvisibility=hidden")
 endif()
 
-FILE(GLOB_RECURSE sources ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cc)
-FILE(GLOB_RECURSE includes ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hh)
+FILE(GLOB_RECURSE sources ${CMAKE_CURRENT_SOURCE_DIR}/src/**/*.cc ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cc)
+FILE(GLOB_RECURSE includes ${CMAKE_CURRENT_SOURCE_DIR}/include/**/*.hh ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hh)
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS})
 INCLUDE_DIRECTORIES(${SDL2_IMAGE_INCLUDE_DIRS})
@@ -23,6 +23,6 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ADD_EXECUTABLE(spaceInvaders ${sources} ${includes})
 target_link_libraries(spaceInvaders ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
 
-# source_group("SDL Headers" ${CMAKE_CURRENT_SOURCE_DIR}/include/sdl)
-# source_group("SDL Sources" ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl)
+source_group("SDL Headers" ${CMAKE_CURRENT_SOURCE_DIR}/include/sdl)
+source_group("SDL Sources" ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl)
 

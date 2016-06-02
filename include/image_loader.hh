@@ -9,7 +9,7 @@ public:
     ImageLoader(std::shared_ptr<Window> window)
     :_window(window)
     { }
-    virtual Image loadImage(std::string path) = 0;
+    virtual std::shared_ptr<Image> loadImage(std::string path) = 0;
     
 protected:
     std::shared_ptr<Window> _window;

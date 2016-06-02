@@ -1,6 +1,6 @@
-#include "sdl_context.hh"
-#include "sdl_event_handler.hh"
-#include "sdl_window.hh"
+#include "sdl/sdl_context.hh"
+#include "sdl/sdl_event_handler.hh"
+#include "sdl/sdl_window.hh"
 
 SDLContext::SDLContext() {
     

@@ -1,4 +1,4 @@
-#include "sdl_event_handler.hh"
+#include "sdl/sdl_event_handler.hh"
 #include <SDL_events.h>
 
 #include <iostream>
